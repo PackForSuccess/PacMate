@@ -28,7 +28,7 @@ app.get('/api', (req, res) => {
 	if (req.user) {
 		res.sendFile(path.join(__dirname, '../public/index.html'));	
 	}
-	else res.redirect('/login');
+	else res.redirect('/api/login');
 });
 
 //add endpoints here
