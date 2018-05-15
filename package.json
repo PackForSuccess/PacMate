@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-boilerplate",
+  "name": "PacMate",
   "version": "1.0.0",
-  "description": "Modern React Redux Boilerplate",
+  "description": "Making packing easy",
   "main": "index.js",
   "scripts": {
     "start": "webpack && live-server public",
@@ -10,13 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Xavyr/xavyr-react-redux-boilerplate"
+    "url": "https://github.com/PackForSuccess/PacMate"
   },
-  "author": "Xavyr",
+  "author": "Alyssa Atain, Madalyn Baehre, Jake Acosta, and Esther Kim",
   "license": "MIT",
-  "homepage": "https://github.com/Xavyr/xavyr-react-redux-boilerplate",
+  "homepage": "https://github.com/PackForSuccess/PacMate",
   "dependencies": {
-    "axios": "^0.17.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
