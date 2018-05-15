@@ -1,0 +1,53 @@
+{
+  "name": "PacMate",
+  "version": "1.0.0",
+  "description": "Making packing easy",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack && live-server public",
+    "start-dev": "nodemon server/server.js & webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PackForSuccess/PacMate"
+  },
+  "author": "Alyssa Atain, Madalyn Baehre, Jake Acosta, and Esther Kim",
+  "license": "MIT",
+  "homepage": "https://github.com/PackForSuccess/PacMate",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "config": "^1.29.4",
+    "css-loader": "^0.28.9",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.4",
+    "path": "^0.12.7",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.3.2",
+    "react-hot-loader": "^3.1.3",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "styled-components": "^3.1.6",
+    "twilio": "^3.11.2",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "babel-preset-stage-1": "^6.24.1",
+    "file-loader": "^1.1.6",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
