@@ -27,7 +27,6 @@
     "config": "^1.29.4",
     "css-loader": "^0.28.9",
     "live-server": "^1.2.0",
-    "material-ui": "^0.20.0",
     "node-sass": "^4.7.2",
     "nodemon": "^1.17.4",
     "path": "^0.12.7",
