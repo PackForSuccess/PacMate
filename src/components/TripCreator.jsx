@@ -7,17 +7,17 @@ let TripForm = props => {
     return <form onSubmit={handleSubmit(() => console.log('submitting New Trip'))}>
         <div>
         <label htmlFor='dest'>Destination: </label>
-        <Field name='destination' component='React.DOM.input' type='text' />
+        <textarea name='destination' placeholder='Where to?' type='text' />
         </div>
         <div>
         <label htmlFor='depart'>Leaving on: </label>
-        <Field name='departing' component='React.DOM.input' type='text' />
+        <textarea name='departing' component='React.DOM.input' type='text' />
         </div>
         <div>
         <label htmlFor='home'>Returning: </label>
-        <Field name='returnHome' component='React.DOM.input' type='text' />
+        <textarea name='returnHome' component='React.DOM.input' type='text' />
         </div>
-      <button type="submit" id="newTripButton">Submit</button>
+      <button type="submit" id="newTripButton" >Submit</button>
     </form>
 }
 

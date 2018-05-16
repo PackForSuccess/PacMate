@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch) => {
 class ExampleContainer extends Component {
 
   componentDidMount() {
-    console.log('exampleContainer did mount', 'and tripDisplay, too');
+    console.log('exampleContainer did mount');
   }
 
   render() {
