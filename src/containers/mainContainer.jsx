@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UpcomingTripsContainer from './upcomingTrips.jsx';
+import ProfileContainer from './profileContainer.jsx';
 import SuitcaseContainer from './suitcaseContainer.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -24,7 +24,7 @@ class MainContainer extends Component {
       <div>
       <h1 style={{textAlign: 'center'}}>PacMate</h1>
     <Route path = '/suitcase/:location' render = {({match}) => <SuitcaseContainer location = {match.params.location} />} />
-        <Route exact={true} path = '/' component = {UpcomingTripsContainer}/>
+        <Route exact={true} path = '/' component = {ProfileContainer}/>
       </div>
       </Router>
     );
