@@ -15,7 +15,7 @@ const db = require('./database')
 
 //constants for cookies and body parser
 const cookieSession = require('cookie-session');
-const keys = require('./config/keys');
+// const keys = require('./config/keys');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 

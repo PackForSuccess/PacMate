@@ -3,19 +3,18 @@ import ExampleComponent from '../components/exampleComponent.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../action/actions'
+import TripForm from '../components/TripCreator.jsx'
 
 
 const mapStateToProps = (store) => {
   return {
-    syncData: store.firstReducer.syncData,
-    asyncData: store.firstReducer.asyncData,
+    syncData: store.firstReducer.syncData
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    syncAction: actions.syncAction,
-    asyncAction: actions.asyncAction
+    syncAction: actions.syncAction
   }, dispatch)
 };
 
@@ -23,7 +22,7 @@ const mapDispatchToProps = (dispatch) => {
 class ExampleContainer extends Component {
 
   componentDidMount() {
-    console.log('exampleContainer did mount');
+    console.log('exampleContainer did mount', 'and tripDisplay, too');
   }
 
   render() {
@@ -33,9 +32,8 @@ class ExampleContainer extends Component {
         <ExampleComponent
           syncAction={this.props.syncAction}
           syncData={this.props.syncData}
-          asyncAction={this.props.asyncAction}
-          asyncData={this.props.asyncData}
         />
+        <TripForm class="trip-form"/>
       </div>
     );
   }
