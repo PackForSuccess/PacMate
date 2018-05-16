@@ -15,11 +15,11 @@ let config = {
 }
 
 //Generating pool API
-let db = new Client(config);
+let db = new Pool(config);
 
-db.connect((err, result) => {
-    if (err) throw new Error();
-    else console.log(`Connected to the database...`);
-});
+// db.connect((err, result) => {
+//     if (err) throw new Error();
+//     else console.log(`Connected to the database...`);
+// });
 
 module.exports = db;

@@ -1,7 +1,5 @@
 const initialState = {
-  syncData: false,
-  asyncData: false,
-
+  syncData: false
 }
 
 //The action passed into our reducer comes from the dispatch.
@@ -11,11 +9,6 @@ const firstReducer = (state = initialState, action) => {
       return {
         ...state,
         syncData: action.payload
-      }
-    case 'ASYNC_ACTION':
-      return {
-        ...state,
-        asyncData: action.payload
       }
     default:
       return state;
