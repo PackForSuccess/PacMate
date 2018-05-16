@@ -9,7 +9,7 @@ const app = express();
 const db = require('./database')
 
 //import controllers below ////******////// ////******////// ////******//////
-
+const tripController = require('')
 
 ////******//////////******//////////******//////////******//////////******//////
 
@@ -48,7 +48,7 @@ app.post('/api/newTrip', (req, res) => {
 	console.log('hit the newTrip route');
 });
 
-app.post('/api/editSuitcase', (req, res) => {
+app.post('/api/viewChecklist', (req, res) => {
 	console.log('hit the editSuitcase route');
 });
 
