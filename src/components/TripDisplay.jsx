@@ -2,12 +2,16 @@ import React from 'react';
 import TripForm from '../components/TripCreator.jsx'
 
 class TripDisplay extends React.Component {
-    submit = values => {
-        console.log(values)
+    constructor(props) {
+        super(props)
+        this.onSubmit = this.onSubmit.bind(this)
     }
-    render() {
-        return <TripForm onSubmit={this.submit} />
-    }
+        submit = value(function() {
+            console.log(valuee, "hiiii")
+        })
+        render() {
+            return <TripForm onSubmit={this.submit} />
+        }
 }
 
 export default TripDisplay;
