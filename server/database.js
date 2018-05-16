@@ -1,10 +1,12 @@
-const { Pool } = require('pg');
+const { Client } = require('pg');
+const uri = 'postgres://swdvyewj:jg0Z8kF_9RjyD0xMujc_T1nAy7b5OYZg@pellefant.db.elephantsql.com:5432/swdvyewj';
 
-const USER = '';
-const PASS = '';
+//find this on db server
+const USER = 'swdvyewj';
+const PASS = 'jg0Z8kF_9RjyD0xMujc_T1nAy7b5OYZg';
 
 let config = {
-    host: "",
+    host: 'pellefant.db.elephantsql.com',
     user: USER,
     password: PASS,
     database: USER,
@@ -13,7 +15,7 @@ let config = {
 }
 
 //Generating pool API
-let db = new Pool(configA);
+let db = new Client(config);
 
 db.connect((err, result) => {
     if (err) throw new Error();
