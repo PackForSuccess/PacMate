@@ -10,22 +10,30 @@ CREATE TABLE trips(
   trip_id serial PRIMARY KEY,
   user_id INTEGER,
   location VARCHAR,
-  date TIME,
-  casual BOOLEAN,
-  packed BOOLEAN,
-  temp INTEGER
-);
-
-CREATE TABLE default_clothes(
-  serial_key serial PRIMARY KEY,
-  user_id INTEGER,
-  casual BOOLEAN,
   items VARCHAR,
-  temp INTEGER
+  temp INTEGER,
+  departure_date DATE,
+  return_date DATE
 );
 
-CREATE TABLE casual(
-  serial_key serial PRIMARY KEY,
-  user_id INTEGER,
+CREATE TABLE items(
+  items_id serial PRIMARY KEY,
+  description VARCHAR,
+  climate INTEGER,
+  occasion INTEGER
+);
+
+CREATE TABLE climate(
+  c_id serial PRIMARY KEY,
+  description VARCHAR
+);
+
+CREATE TABLE occasion(
+  o_id serial PRIMARY KEY,
+  description VARCHAR
+);
+
+CREATE TABLE unwanted(
+  uw_id serial PRIMARY KEY,
   items VARCHAR
 );
