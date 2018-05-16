@@ -33,7 +33,7 @@ class ExampleContainer extends Component {
           syncAction={this.props.syncAction}
           syncData={this.props.syncData}
         />
-        <TripForm class="trip-form"/>
+        <TripForm class="trip-form" />
       </div>
     );
   }
