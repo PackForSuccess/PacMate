@@ -1,3 +1,4 @@
+
 const { Client } = require('pg');
 const uri = 'postgres://swdvyewj:jg0Z8kF_9RjyD0xMujc_T1nAy7b5OYZg@pellefant.db.elephantsql.com:5432/swdvyewj';
 
@@ -15,11 +16,11 @@ let config = {
 }
 
 //Generating pool API
-let db = new Pool(config);
+let db = new Client(config);
 
-// db.connect((err, result) => {
-//     if (err) throw new Error();
-//     else console.log(`Connected to the database...`);
-// });
+db.connect((err, result) => {
+    if (err) return err;
+    console.log(`Connected to the database...`);
+});
 
 module.exports = db;

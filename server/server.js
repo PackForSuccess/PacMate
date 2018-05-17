@@ -9,7 +9,7 @@ const app = express();
 const db = require('./database')
 
 //import controllers below ////******////// ////******////// ////******//////
-const tripController = require('')
+const tripController = require('./controller/tripController')
 
 ////******//////////******//////////******//////////******//////////******//////
 
@@ -23,36 +23,36 @@ const bodyParser = require('body-parser');
 app.use(express.static(path.join(__dirname, './../public')));
 
 //serve homepage
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
 	console.log('hit the home route');
 	if (req.user) {
 		res.sendFile(path.join(__dirname, '../public/index.html'));	
 	}
-	else res.redirect('/api/login');
+	else res.redirect('/login');
 });
 
 //add endpoints here
-app.post('/api/createUser', (req, res) => {
+app.post('/createUser', (req, res) => {
 	console.log('hit the createUser route');
 });
 
-app.get('/api/login', (req, res) => {
+app.get('/login', (req, res) => {
 	console.log('hit the login route');
 });
 
-app.get('/api/logout', (req, res) => {
+app.get('/logout', (req, res) => {
 	console.log('hit the logout route');
 });
 
-app.post('/api/newTrip', (req, res) => {
-	console.log('hit the newTrip route');
+app.get('/newTrip', tripController.getLocation, tripController.getWeather, tripController.addTrip, (req, res) => {
+	res.json('yay');
 });
 
-app.post('/api/viewChecklist', (req, res) => {
+app.post('/viewChecklist', (req, res) => {
 	console.log('hit the editSuitcase route');
 });
 
-app.post('/api/editDefault', (req, res) => {
+app.post('/editDefault', (req, res) => {
 	console.log('hit the editDefault route');
 });
 
