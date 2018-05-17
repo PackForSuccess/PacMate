@@ -19,8 +19,9 @@ CREATE TABLE trips(
 CREATE TABLE items(
   items_id serial PRIMARY KEY,
   description VARCHAR,
-  climate INTEGER,
-  occasion INTEGER
+  climate INTEGER, --fk to climate c_id (need to add)
+  occasion INTEGER, --fk to occasion o_id (need to add)
+  user_id INTEGER --fk to account user_id
 );
 
 CREATE TABLE climate(
@@ -34,6 +35,12 @@ CREATE TABLE occasion(
 );
 
 CREATE TABLE unwanted(
-  uw_id serial PRIMARY KEY,
-  items VARCHAR
+  uw_id serial PRIMARY KEY, --fk to account user_id (need to add)
+  items INTEGER
 );
+
+--insert
+INSERT INTO account (username, password, created_on, last_login)
+VALUES
+ ('firstUser','password1', '2004-10-19 10:23:54', '2017-05-19 10:23:54');
+
