@@ -13,7 +13,7 @@ const cookieSession = require('cookie-session');
 const LocalStrategy = require('passport-local').Strategy;
 
 //import controllers below ////******////// ////******////// ////******//////
-const tripController = require('')
+// const tripController = require('')
 
 ////******//////////******//////////******//////////******//////////******//////
 
@@ -69,7 +69,7 @@ app.get('/', (req, res) => {
 })
 
 //configuring routes to use passport
-app.post('/api/login',
+app.post('/login',
     passport.authenticate('local'),
     function (req, res) {
         console.log('authentication was successfullll!!!', req.body)

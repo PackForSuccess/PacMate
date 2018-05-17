@@ -25,7 +25,7 @@ class MainContainer extends Component {
       <div>
       <h1 style={{textAlign: 'center'}}>PacMate</h1>
     <Route path = '/suitcase/:location' render = {({match}) => <SuitcaseContainer location = {match.params.location} />} />
-        <Route exact={true} path = '/' component = {ProfileContainer}/>
+        <Route exact={true} path = '/' component = {PublicContainer}/>
       </div>
       </Router>
     );
