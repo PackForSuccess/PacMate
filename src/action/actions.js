@@ -2,6 +2,7 @@ import * as types from '../constants/actionTypes.js'
 
 export const submitLoginInfo = (userLoginInfo) => {
   return function getLoginInfo(dispatch) {
+    console.log('innsideeee get Login')
     const fetchedPromise = fetch('/api/login',
       {
         method: "POST",

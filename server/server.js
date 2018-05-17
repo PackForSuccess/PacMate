@@ -5,17 +5,17 @@ const db = require('./database')
 const app = express();
 const passport = require('passport');
 const session = require('express-session');
+//constants for cookies and body parser
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
+//import passport strategies
 const LocalStrategy = require('passport-local').Strategy;
 
-// const secret = 'randomString';
-// const sessConfig = {
-// 	secret,
-//     resave: false,
-//     saveUninitialized: false  
-// } 
+//import controllers below ////******////// ////******////// ////******//////
+const tripController = require('')
+
+////******//////////******//////////******//////////******//////////******//////
 
 passport.use(new LocalStrategy({
     usernameField: 'username',
@@ -54,27 +54,19 @@ passport.deserializeUser((id, done) => {
 //serve static files
 app.use(express.static(path.join(__dirname, './../public')));
 app.use(session({ secret: 'cats' }));
-// app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// connecting passport to piggpack off of express
-// app.use(session(sessConfig))
+
 // // Initialize Passport and restore authentication state, if any, from the session.
 app.use(passport.initialize())
 app.use(passport.session())
 
 // //pass all endpoints into the file routes
-// app.use('/api', router)
 
 app.get('/', (req, res) => {
     console.log('hit the home route');
     res.sendFile(path.join(__dirname, '../public/index.html'));
-});
-
-app.get('/login', (req, res) => {
-    console.log('inside login get method')
-    res.render('login');
-});
+})
 
 //configuring routes to use passport
 app.post('/api/login',
@@ -84,6 +76,27 @@ app.post('/api/login',
         res.json(req.body);
     }
 );
+
+//add endpoints here
+app.post('/api/createUser', (req, res) => {
+    console.log('hit the createUser route');
+});
+
+app.get('/api/login', (req, res) => {
+    console.log('hit the login route');
+});
+
+app.get('/api/logout', (req, res) => {
+    console.log('hit the logout route');
+});
+
+app.post('/api/newTrip', (req, res) => {
+    console.log('hit the newTrip route');
+});
+
+app.post('/api/viewChecklist', (req, res) => {
+    console.log('hit the editSuitcase route');
+});
 
 //listening on port 3000
 app.listen(3000, () => console.log('Listening on port 3000...'));
