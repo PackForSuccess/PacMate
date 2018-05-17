@@ -19,7 +19,7 @@ class ProfileContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="profileContainer">
         <TripDisplay/>
         <UpcomingTripsContainer/>
       </div>

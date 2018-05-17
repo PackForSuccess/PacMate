@@ -19,7 +19,7 @@ class SuitcaseContainer extends Component {
   render() {
 
     return (
-      <div>
+      <div className="suitcaseCon">
         <h2>Suitcase!</h2>
         {this.props.location}
       </div>

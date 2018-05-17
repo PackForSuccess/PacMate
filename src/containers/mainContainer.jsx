@@ -4,7 +4,7 @@ import SuitcaseContainer from './suitcaseContainer.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../action/actions'
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = (store) => {
@@ -21,11 +21,11 @@ class MainContainer extends Component {
   render() {
     return (
       <Router>
-      <div>
-      <h1 style={{textAlign: 'center'}}>PacMate</h1>
-    <Route path = '/suitcase/:location' render = {({match}) => <SuitcaseContainer location = {match.params.location} />} />
-        <Route exact={true} path = '/' component = {ProfileContainer}/>
-      </div>
+        <div style={{ backgroundColor: '#f9f6efa3', padding: '10px', marginTop: '20px'}}>
+          <h1 style={{ textAlign: 'center' }}>PacMate</h1>
+          <Route path='/suitcase/:location' render={({ match }) => <SuitcaseContainer location={match.params.location} />} />
+          <Route exact={true} path='/' component={ProfileContainer} />
+        </div>
       </Router>
     );
   }
