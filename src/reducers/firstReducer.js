@@ -11,6 +11,7 @@ const initialState = {
 const firstReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'INIT_USER_INFO':
+      console.log('usernInfo', action.payload )
       return {
           ...state, userInfo : action.payload
         }

@@ -28,9 +28,11 @@ passport.use(new LocalStrategy({
             console.log('errrorrr time', err)
             return done(err)
         }
-        if (result.rows[0].username === username) {
-            console.log('insideeeee if of user.row[0]', result.rows[0])
-            return (result.rows[0].username === username) ? done(null, result) : done(null, false);
+        if (result.rows.length > 0) {
+            if (result.rows[0].username === username) {
+                console.log('insideeeee if of user.row[0]', result.rows[0])
+                return (result.rows[0].username === username) ? done(null, result) : done(null, false);
+            }
         }
     })
 }))
