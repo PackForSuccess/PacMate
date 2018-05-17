@@ -9,13 +9,13 @@ const app = express();
 const db = require('./database')
 
 //import controllers below ////******////// ////******////// ////******//////
-
+const tripController = require('')
 
 ////******//////////******//////////******//////////******//////////******//////
 
 //constants for cookies and body parser
 const cookieSession = require('cookie-session');
-const keys = require('./config/keys');
+// const keys = require('./config/keys');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
@@ -48,7 +48,7 @@ app.post('/api/newTrip', (req, res) => {
 	console.log('hit the newTrip route');
 });
 
-app.post('/api/editSuitcase', (req, res) => {
+app.post('/api/viewChecklist', (req, res) => {
 	console.log('hit the editSuitcase route');
 });
 
