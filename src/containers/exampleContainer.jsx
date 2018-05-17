@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import ExampleComponent from '../components/exampleComponent.jsx';
+import PublicContainer from './publicContainer.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../action/actions'
 import TripForm from '../components/TripCreator.jsx'
-
 
 const mapStateToProps = (store) => {
   return {
