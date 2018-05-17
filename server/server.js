@@ -69,14 +69,12 @@ app.use(passport.session())
 app.get('/', (req, res) => {
     console.log('hit the home route');
     res.sendFile(path.join(__dirname, '../public/index.html'));
-}
-);
+});
 
 app.get('/login', (req, res) => {
     console.log('inside login get method')
     res.render('login');
-}
-);
+});
 
 //configuring routes to use passport
 app.post('/api/login',

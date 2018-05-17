@@ -1,5 +1,24 @@
 import * as types from '../constants/actionTypes.js'
 
-export const loginSubmit = (userLoginInfo) => {
-  return {type: types.LOGIN_SUBMIT, payload: userLoginInfo}
-}
+export const submitLoginInfo = (userLoginInfo) => {
+  return function getLoginInfo(dispatch) {
+    const fetchedPromise = fetch('/api/login',
+      {
+        method: "POST",
+        body: JSON.stringify(userLoginInfo),
+        credentials: true,
+        headers: { 'content-type': 'application/json' }
+      })
+      .then(res => res.json())
+      .then(userInfo => userInfo)
+      .catch(err => console.log('error logining in up')
+      )
+
+    const payloadForReducer = (userInfo) => {
+      return { type: types.INIT_USER_INFO, payload: userInfo }
+    }
+    return fetchedPromise.then(
+      res => dispatch(payloadForReducer(res)),
+    );
+  }
+};

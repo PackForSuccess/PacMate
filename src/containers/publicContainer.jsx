@@ -8,7 +8,7 @@ import * as actions from '../action/actions';
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    loginSubmit: actions.loginSubmit
+    submitLoginInfo: actions.submitLoginInfo
   }, dispatch)
 };
 
@@ -18,7 +18,7 @@ class PublicContainer extends Component {
     return (
       <div className = 'publicContainer'>
         <SignUp />
-        <br /><Login loginSubmit={this.props.loginSubmit}/>
+        <br /><Login submitLoginInfo={this.props.submitLoginInfo}/>
         <br /><FacebookButton />
       </div>
     );

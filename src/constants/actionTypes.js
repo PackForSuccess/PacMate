@@ -1,2 +1,2 @@
-export const LOGIN_SUBMIT = "LOGIN_SUBMIT";
+export const INIT_USER_INFO = "INIT_USER_INFO";
 
