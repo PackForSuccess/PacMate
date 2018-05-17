@@ -4,9 +4,9 @@
   "description": "Making packing easy",
   "main": "index.js",
   "scripts": {
-    "start": "webpack && live-server public",
-    "start-dev": "nodemon server/server.js & webpack-dev-server",
-    "server": "nodemon ./server/server.js",
+    "start": "nodemon ./server/server.js",
+    "build": "webpack -w",
+    "dev": "webpack-dev-server --hot --inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
