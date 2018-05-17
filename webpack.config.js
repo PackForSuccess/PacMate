@@ -32,9 +32,7 @@ module.exports = {
 
   // Configuration for webpack-dev-server
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
-	  proxy: {
-		  "/api*": "http://localhost:3000"
-	  }
+    hot: true,
+    port: 8080
   },
 };
