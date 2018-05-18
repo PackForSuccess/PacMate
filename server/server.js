@@ -13,7 +13,7 @@ const cookieSession = require('cookie-session');
 const LocalStrategy = require('passport-local').Strategy;
 
 //import controllers below ////******////// ////******////// ////******//////
-// const tripController = require('')
+const tripController = require('./controller/tripController')
 
 ////******//////////******//////////******//////////******//////////******//////
 
@@ -55,9 +55,10 @@ passport.deserializeUser((id, done) => {
 
 //serve static files
 app.use(express.static(path.join(__dirname, './../public')));
+
 app.use(session({ secret: 'cats' }));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+	app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded({ extended: false }));
 
 // // Initialize Passport and restore authentication state, if any, from the session.
 app.use(passport.initialize())
@@ -79,25 +80,16 @@ app.post('/login',
     }
 );
 
-//add endpoints here
-app.post('/api/createUser', (req, res) => {
-    console.log('hit the createUser route');
+app.get('/logout', (req, res) => {
+	console.log('hit the logout route');
 });
 
-app.get('/api/login', (req, res) => {
-    console.log('hit the login route');
+app.get('/newTrip', tripController.getLocation, tripController.getWeather, tripController.addTrip, (req, res) => {
+	res.json('yay');
 });
 
-app.get('/api/logout', (req, res) => {
-    console.log('hit the logout route');
-});
-
-app.post('/api/newTrip', (req, res) => {
-    console.log('hit the newTrip route');
-});
-
-app.post('/api/viewChecklist', (req, res) => {
-    console.log('hit the editSuitcase route');
+app.post('/viewChecklist', (req, res) => {
+	console.log('hit the editSuitcase route');
 });
 
 //listening on port 3000
