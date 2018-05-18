@@ -20,7 +20,7 @@ class MainContainer extends Component {
     console.log(this.props.userInfo, '<----changing userInfo')
     return (
       <Router>
-        <div style={{ backgroundColor: '#f9f6efa3', padding: '10px', marginTop: '20px'}}>
+        <div style={{ backgroundColor: '#f9f6efa3', padding: '10px', marginTop: '13vh'}}>
           <h1 style={{ textAlign: 'center' }}>PacMate</h1>
           <Route path='/suitcase/:location' render={({ match }) => <SuitcaseContainer location={match.params.location} />} />
           <Route exact={true} path='/public' component={PublicContainer} />

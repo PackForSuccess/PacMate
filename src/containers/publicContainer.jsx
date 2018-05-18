@@ -17,7 +17,7 @@ class PublicContainer extends Component {
   render() {
     return (
       <div className = 'publicContainer'>
-        <SignUp />
+        {/* <SignUp /> */}
         <br /><Login submitLoginInfo={this.props.submitLoginInfo}/>
         <br /><FacebookButton />
       </div>
