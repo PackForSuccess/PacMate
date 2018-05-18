@@ -9,13 +9,23 @@ module.exports = {
   module: {
     rules: [
       {
-        loader: 'babel-loader',
-        test: /\.js$|\.jsx$/,
-        exclude: /node_modules/
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        query: {
+          presets: ["es2015", "react"]
+        }
       },
       {
-        test: /.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          }
+        ]
       },
 	    {
 	    	test: /\.(png|svg|jpg|jpeg|gif)$/,

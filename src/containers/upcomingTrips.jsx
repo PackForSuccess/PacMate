@@ -27,7 +27,7 @@ class UpcomingTripsContainer extends Component {
       />)
     }
     return (
-      <div>
+      <div className="upcomingTrips">
         <h2>Upcoming Trips</h2>
         {tripsArr}
       </div>
